@@ -5,13 +5,14 @@
 */
 // This file is intentionally blank
 // Use this file to add JavaScript to your project
-test_cond=['test1','test2',"test3","test4","test5"]
+test_cond=['wallace','holland',"elm","oxford","santouka"]
 
-for (let i = 0; i < test_cond.length; i++) {
+for (let i = 0; i <= test_cond.length; i++) {
     $("#input-"+i).on("input", function() {
-        if($(this).val().includes(test_cond[i-1])){
-            $("#sec-"+(i+1)).show()
-            document.getElementById("sec-"+(i+1)).scrollIntoView();
+        if($(this).val().toLowerCase().includes(test_cond[i-1])){
+            $("#sec-"+(i+1)).show(function(){
+                document.getElementById("sec-"+(i+1)).scrollIntoView();
+            })
         }
     });
 }
